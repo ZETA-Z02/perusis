@@ -1,0 +1,17 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: Century Gothic;
+}
+body {
+  background-color: #ededed;
+}
+.fa-user, .fa-robot {
+  font-size: 5rem;
+}
+.btn button{
+  font-size: 1.5rem;
+}
+.fa-microphone{
+  font-size: 2rem;
+}

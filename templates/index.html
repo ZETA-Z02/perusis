@@ -65,12 +65,10 @@
   <body>
     <!-- CHAT BOT NO TOCAR -->
     <button class="chatbot-toggler">
-      <span class="material-symbols-rounded">mode_comment</span>
-      <span class="material-symbols-outlined">close</span>
+      <!-- <span class="material-symbols-rounded">mode_comment</span> -->
+      <!-- <span class="material-symbols-outlined">close</span> -->
+      <img src="{{ url_for('static', filename='img/chat.png') }}" alt="chatbot" width="50">
     </button>
-    <a class="button bot-z" href="">
-      <i class="fa-solid fa-arrow-right"></i>
-    </a>
     <div class="chatbot">
       <header>
         <h2>Chatbot</h2>
@@ -92,7 +90,7 @@
       </div>
     </div>
     <!-- CHAT BOT NO TOCAR END -->
-    <div class="grid-container">
+    <div class="container margin-horizontal-3">
       <!-- HEADER -->
       <div class="grid-x large-up-2">
         <div class="cell padding-1">
@@ -145,29 +143,30 @@
             />
           </a>
         </div>
-        <div class="padding-top-1">
-          <input type="text">
+        <div class="padding-top-1 search">
+          <input type="text" placeholder="Buscar Producto">
+          <div class="icon" id="icon"></div>
         </div>
         <nav>
           <ul>
             <li class="activate">
               <a href="#">
-                <i class="fa-solid fa-phone"></i>
+                <i class="fa-solid fa-retweet"></i>
               </a>
             </li>
             <li class="activate">
               <a href="#">
-                <i class="fa-solid fa-phone"></i>
+                <i class="fa-regular fa-heart"></i>
               </a>
             </li>
             <li class="activate">
               <a href="#">
-                <i class="fa-solid fa-phone"></i>
+                <i class="fa-regular fa-user"></i>
               </a>
             </li>
             <li class="activate">
               <a href="#">
-                <i class="fa-solid fa-phone"></i>
+                <i class="fa-solid fa-bag-shopping"></i> s/.0.00
               </a>
             </li>
           </ul>
@@ -223,270 +222,75 @@
       <!-- MAIN PRESENTACION -->
 
       <hr />
-<!-- 
-      <section class="cuerpo1">
-        <div class="grid-x">
-          <div class="cell small-12 medium-6 large-4">
-            <div class="thumbnail">
-              <img
-                src="https://images.pexels.com/photos/3182829/pexels-photo-3182829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Grupo"
-                width="250px"
-              />
-            </div>
-          </div>
-          <div class="cell small-12 medium-6 large-8">
-            <p class="p-central">
-              Servicios como desarrollador de software a medida. Nuestros
-              desarrolladores de software crean plataformas adhoc a medida para
-              grandes empresas, pymes y pequeñas empresas.
-            </p>
-            <br />
-            <p class="p-central">
-              Nuestro equipo de programadores de software pueden ayudarlo a
-              transformar su negocio con las últimas capacidades tecnológicas
-              para mantenerse a la vanguardia. Desarrollo de software confiable
-              y escalable para cualquier sistema operativo, navegador y
-              dispositivo.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <hr />
-
-      <div class="grid-container">
-        <div class="row text-center">
-          <h1>Nuestros servicios</h1>
-        </div>
-        <div class="grid-x">
-          <div class="cell small-12 medium-6 large-4">
-            <a href="productos#desarrollo-software" class="activate">
-              <div class="card">
-                <img
-                  class="thumbnail"
-                  src="https://images.pexels.com/photos/5793953/pexels-photo-5793953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="Software"
-                />
-                <div class="card-servicios">
-                  <h4>Desarrollo de software</h4>
-                  <p>Tecnologias: JAVA, C++, PHP, Javascript</p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="cell small-12 medium-6 large-4">
-            <a href="productos#redes-cableado" class="activate">
-              <div class="card">
-                <img
-                  class="thumbnail"
-                  src="https://images.pexels.com/photos/2881232/pexels-photo-2881232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="Cableado de Redes"
-                />
-                <div class="card-servicios">
-                  <h4>Redes y Cableado estructurado</h4>
-                  <p>Mejoras internas de la institución</p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="cell small-12 medium-6 large-4">
-            <a href="productos#analisis-estadistico" class="activate">
-              <div class="card">
-                <img
-                  class="thumbnail"
-                  src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="Analisis Estadistico"
-                />
-                <div class="card-servicios">
-                  <h4>Analisis Estadistico</h4>
-                  <p>Analisis Bigdata con Machine Learnign</p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="grid-x">
-          <div class="cell small-12 medium-6 large-4">
-            <a href="productos#especialista-archivos" class="activate">
-              <div class="card">
-                <img
-                  class="thumbnail"
-                  src="https://images.pexels.com/photos/6334780/pexels-photo-6334780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="Especialista en Archivos"
-                />
-                <div class="card-servicios">
-                  <h4>Especialista en Archivos</h4>
-                  <p>
-                    Experiencia en la organización de Archivos, Archivo Central
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="cell small-12 medium-6 large-4">
-            <a href="productos#estudio-mercado" class="activate">
-              <div class="card">
-                <img
-                  class="thumbnail"
-                  src="https://images.pexels.com/photos/18627851/pexels-photo-18627851/free-photo-of-vendedora-de-comida-mexicana.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="Estudio de mercado"
-                />
-                <div class="card-servicios">
-                  <h4>Estudio de Mercado</h4>
-                  <p>Analisis comercial estadistico</p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="cell small-12 medium-6 large-4"></div>
-        </div>
-      </div>
-      <hr />
-
-      <div class="grid-container">
-        <div class="row text-center">
-          <h2>¿Por qué trabajar con nosotros?</h2>
-        </div>
-
-        <div class="grid-x grid-margin-x">
-          <div class="cell small-12 medium-6 large-4">
-            <div class="card">
-              <i class="fa-solid nosotros fa-gauge-simple-high"></i>
-              <div class="card-section">
-                <h4>RAPIDO</h4>
-                <p>
-                  Nuestra experiencia nos permite culminar proyectos en el
-                  tiempo requerido con máxima calidad.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="cell small-12 medium-6 large-4">
-            <div class="card">
-              <i class="fa-solid nosotros fa-comments-dollar"></i>
-              <div class="card-section">
-                <h4>ACCESIBLE</h4>
-                <p>
-                  Brindamos precios justos y accesibñes, dependiendo de nuestros
-                  planes web. Compara nuestros precios
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="cell small-12 medium-6 large-4">
-            <div class="card">
-              <i class="fa-solid nosotros fa-people-group"></i>
-              <div class="card-section">
-                <h4>PROFESIONALES</h4>
-                <p>
-                  Contamos con personal 100% profesional, capacitado y
-                  calificado, expertos en Diseño Web, profesionales.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
 
     <!-- Pie de pagina -->
-    <div class="grid-container-fluid foot-er">
-      <div class="grid-container">
-        <div class="grid-x grid-padding-y">
-          <div class="cell small-12 medium-4 large-3 titulo-footer">
-            <h3>Herramientas y servicios</h3>
-            <ul>
-              <li>
-                <a href="#" class="foot">Todos los productos</a>
-              </li>
-              <li>
-                <a href="#" class="foot">Catalogo de productos</a>
-              </li>
-              <li>
-                <a href="#" class="foot">Costos por servicios</a>
-              </li>
-              <li>
-                <a href="#" class="foot">Listado de tiendas</a>
-              </li>
-              <li>
-                <a href="#" class="foot">Ofertas</a>
-              </li>
-            </ul>
-          </div>
-          <div class="cell small-12 medium-4 large-3 titulo-footer">
-            <h3>Empresa</h3>
-            <ul>
-              <li>
-                <a href="#" class="foot">Blog</a>
-              </li>
-              <li>
-                <a href="#" class="foot">API</a>
-              </li>
-              <li>
-                <a href="#" class="foot">Bolsa de Trabajo</a>
-              </li>
-              <li>
-                <a href="#" class="foot">Mision y Vision</a>
-              </li>
-              <li>
-                <a href="#" class="foot">Anunciate con nosotros</a>
-              </li>
-            </ul>
-          </div>
-          <div class="cell small-12 medium-4 large-3 titulo-footer">
-            <h3>Siganos en Redes Sociales</h3>
-            <a
-              href="https://web.facebook.com/edgarapazac"
-              target="_blank"
-              class="rss"
-              ><i class="fa-brands fa-facebook"></i
-            ></a>
-            <a href="https://twitter.com/eapaza15" target="_blank" class="rss"
-              ><i class="fa-brands fa-tiktok"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/edgar-apaza-941745139/"
-              target="_blank"
-              class="rss"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
-            <a
-              href="https://www.youtube.com/channel/UC1UuS6WNsEkTYJFSrbsJU7wi"
-              target="_blank"
-              class="rss"
-              ><i class="fa-brands fa-youtube"></i
-            ></a>
-          </div>
-          <div class="cell small-12 medium-4 large-3 titulo-footer">
-            <h3>Perusis - 2023</h3>
-            <ul>
-              <li>
-                <a href="#" class="foot">Terminos y condiciones</a>
-              </li>
-              <li>
-                <a href="#" class="foot">Privacidad</a>
-              </li>
-            </ul>
-
-            <small class="copyright">
-              <span class="">
-                ©
-                <script>
-                  document.write(new Date().getFullYear());
-                </script>
-                Perusis
-              </span>
-              Copyrigth Perusis</small
-            >
-            <small class="copyright">Todos los derechos reservados.</small>
-            <br />
-            <a href="#">Sitemap</a>
-          </div>
-        </div>
+<div class="grid-x">
+  <div class="cell grid-x contactos">
+    <div class="cell large-6 suscribe">
+      <i class="fa-brands fa-telegram"></i>
+      <h5>Suscríbete al boletín para recibir ofertas y descuentos exclusivos</h5>
+    </div>
+    <div class="cell large-6">
+      <input type="text">
+      <button class="button gray">Suscribirse</button>
+      <div class="acepto">
+        <input type="checkbox" name="" id="">
+        <p>Acepto la politica de privacidad</p>
       </div>
     </div>
+  </div>
+  <div class="cell grid-x foot">
+    <div class="cell large-5">
+      <img src="{{ url_for('static', filename='img/perusis.webp') }}" alt="">
+      <p>Tienes preguntas ? ¡Llámenos 24/7!</p>
+      <h5>(051) 942-112200 / (051) 942-112201</h5>
+      <p>Dirección</p>
+      <p>Jr. Moquegua No 180 Puno - Puno - Puno</p>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <div class="cell large-3">
+      <h5>Servicio al cliente</h5>
+      <p>Terminos y Condiciones</p>
+      <p>Preguntas Frecuentes</p>
+      <p>Politica de Cambios y</p>
+      <p>Devoluciones</p>
+      <p>Politica de Privacidad</p>
+      <p>Politica de Garantia</p>
+    </div>
+    <div class="cell large-2">
+      <h5>Sobre Nosotros</h5>
+      <p>Home</p>
+      <p>Nosotros</p>
+      <p>Contactenos</p>
+    </div>
+    <div class="cell large-2">
+      <h5>Atencion al Cliente</h5>
+      <p>+51 942112200</p>
+      <p>Lun. – Sáb. de 9:00 am a 6:00 pm</p>
+      <p>atencionalcliente@perusis.com</p>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="copyright-bar grid-x">
+        <div class="cell large-4">© 
+          <a href="https://perusis.com/">
+              Grupo Perusis
+          </a>| Tienda Electronica															
+        </div>
+        <div class="cell large-4"></div>
+        <div class="cell large-4">		
+          <div class="footer-payment-logo">
+            <ul class="nav cash-card card-inline">
+              <li class="card-item">
+                <img class="h-auto" src="https://i0.wp.com/perusis.com/wp-content/uploads/2017/02/patment-icon.png?fit=324%2C38&amp;ssl=1" alt="" width="324" height="38">
+              </li>
+            </ul>
+          </div><!-- /.payment-methods -->
+        </div>
+    </div>
+  </div>
+</div>
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/foundation.js') }}"></script>

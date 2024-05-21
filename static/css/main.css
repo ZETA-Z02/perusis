@@ -203,7 +203,7 @@ body {
   transition: all 0.2s ease;
 }
 body.show-chatbot .chatbot-toggler {
-  transform: rotate(90deg);
+  /* transform: rotate(90deg); */
 }
 .chatbot-toggler span {
   color: #fff;
@@ -419,6 +419,14 @@ header h2 {
   transform: translate(6px, 6px) rotate(315deg);
 }
 /*---------header iconos--END-----------*/
+
+/*-----------------INFO 1-*----------------------------*/
+.info-1 i{
+  font-size: 2rem;
+}
+/*-----------------INFO 1 END-----------------------------------*/
+
+
 
 /* -------------FOOTER----------------------------*/
 

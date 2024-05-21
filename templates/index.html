@@ -59,169 +59,218 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0"
     />
-    <script src="{{ url_for('static',filename='js/chat.js')}}" defer></script>
+    <!-- <script src="{{ url_for('static',filename='js/chat.js')}}" defer></script> -->
   </head>
 
   <body>
-    <!-- CHAT BOT NO TOCAR -->
-    <button class="chatbot-toggler">
-      <!-- <span class="material-symbols-rounded">mode_comment</span> -->
-      <!-- <span class="material-symbols-outlined">close</span> -->
-      <img src="{{ url_for('static', filename='img/chat.png') }}" alt="chatbot" width="50">
-    </button>
-    <div class="chatbot">
-      <header>
-        <h2>Chatbot</h2>
-        <span class="close-btn material-symbols-outlined">close</span>
-      </header>
-      <ul class="chatbox">
-        <li class="chat incoming">
-          <span class="material-symbols-outlined">smart_toy</span>
-          <p>Hi there 👋<br />How can I help you today?</p>
-        </li>
-      </ul>
-      <div class="chat-input">
-        <textarea
-          placeholder="Enter a message..."
-          spellcheck="false"
-          required
-        ></textarea>
-        <span id="send-btn" class="material-symbols-rounded">send</span>
+<!-- CHAT BOT NO TOCAR -->
+<button class="chatbot-toggler">
+  <!-- <span class="material-symbols-rounded">mode_comment</span> -->
+  <!-- <span class="material-symbols-outlined">close</span> -->
+  <img src="{{ url_for('static', filename='img/chat.png') }}" alt="chatbot" width="50">
+</button>
+<div class="chatbot">
+  <header>
+    <h2>Chatbot</h2>
+    <span class="close-btn material-symbols-outlined">close</span>
+  </header>
+  <ul class="chatbox" id="chat-list">
+    <li class="chat outgoing" id="chat-question">
+      <!-- <p>lorem*10</p> -->
+    </li>
+    <li class="chat incoming" id="chat-answer">
+      <span class="material-symbols-outlined">smart_toy</span>
+      <p>Hola,soy BotTech 👋,<br />asistente virtual de <b>PERUSIS</b><br /><b>INGRESE SU NOMBRE</b><br />
+        <b>Seleccione el numero de opcion y obtendra una respuesta</b></p>
+    </li>
+  </ul>
+  <div class="chat-input">
+    <textarea
+      placeholder="Enter a message..."
+      spellcheck="false"
+      id="entrada"
+      required
+    ></textarea>
+    <span id="send-btn" class="material-symbols-rounded">send</span>
+  </div>
+</div>
+<!-- CHAT BOT NO TOCAR END -->
+<!-- CONTENIDO PRINCIPAL -->
+<div class="container margin-horizontal-3">
+  <!-- HEADER -->
+  <div class="grid-x large-up-2">
+    <div class="cell padding-1">
+      <h4>Bienvenidos a la Tienda Electronica PERUSIS</h4>
+    </div>
+    <div class="cell grid-x padding-top-1 icons">
+      <div class="cell large-3">
+        <img
+          src="{{ url_for('static', filename='img/location.png') }}"
+          alt=""
+          class="icon"
+        />
+        Ubicacion
+      </div>
+      <div class="cell large-3">
+        <img
+          src="{{ url_for('static', filename='img/delivery.png') }}"
+          alt=""
+          class="icon"
+        />
+        Rastrea tu Orden
+      </div>
+      <div class="cell large-3">
+        <img
+          src="{{ url_for('static', filename='img/shop.png') }}"
+          alt=""
+          class="icon"
+        />
+        Compra
+      </div>
+      <div class="cell large-3">
+        <img
+          src="{{ url_for('static', filename='img/user.png') }}"
+          alt=""
+          class="icon"
+        />
+        Mi cuenta
       </div>
     </div>
-    <!-- CHAT BOT NO TOCAR END -->
-    <div class="container margin-horizontal-3">
-      <!-- HEADER -->
-      <div class="grid-x large-up-2">
-        <div class="cell padding-1">
-          <h4>Bienvenidos a la Tienda Electronica PERUSIS</h4>
-        </div>
-        <div class="cell grid-x padding-top-1 icons">
-          <div class="cell large-3">
-            <img
-              src="{{ url_for('static', filename='img/location.png') }}"
-              alt=""
-              class="icon"
-            />
-            Ubicacion
-          </div>
-          <div class="cell large-3">
-            <img
-              src="{{ url_for('static', filename='img/delivery.png') }}"
-              alt=""
-              class="icon"
-            />
-            Rastrea tu Orden
-          </div>
-          <div class="cell large-3">
-            <img
-              src="{{ url_for('static', filename='img/shop.png') }}"
-              alt=""
-              class="icon"
-            />
-            Compra
-          </div>
-          <div class="cell large-3">
-            <img
-              src="{{ url_for('static', filename='img/user.png') }}"
-              alt=""
-              class="icon"
-            />
-            Mi cuenta
-          </div>
-        </div>
-      </div>
-      <hr />
-
-      <div class="header">
-        <div>
+  </div>
+  <hr />
+  <!-- HEADER END-->
+<!-- HEADER BUSCADOR -->
+  <div class="header">
+    <div>
+      <a href="#">
+        <img
+          src="{{ url_for('static', filename='img/logoLarge.jpeg') }}"
+          alt="Logo Katari"
+          class="img-logo"
+        />
+      </a>
+    </div>
+    <div class="padding-top-1 search">
+      <input type="text" placeholder="Buscar Producto">
+      <div class="icon" id="icon"></div>
+    </div>
+    <nav>
+      <ul>
+        <li class="activate">
           <a href="#">
-            <img
-              src="{{ url_for('static', filename='img/logoLarge.jpeg') }}"
-              alt="Logo Katari"
-              class="img-logo"
-            />
+            <i class="fa-solid fa-retweet"></i>
           </a>
-        </div>
-        <div class="padding-top-1 search">
-          <input type="text" placeholder="Buscar Producto">
-          <div class="icon" id="icon"></div>
-        </div>
-        <nav>
-          <ul>
-            <li class="activate">
-              <a href="#">
-                <i class="fa-solid fa-retweet"></i>
-              </a>
-            </li>
-            <li class="activate">
-              <a href="#">
-                <i class="fa-regular fa-heart"></i>
-              </a>
-            </li>
-            <li class="activate">
-              <a href="#">
-                <i class="fa-regular fa-user"></i>
-              </a>
-            </li>
-            <li class="activate">
-              <a href="#">
-                <i class="fa-solid fa-bag-shopping"></i> s/.0.00
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <!-- HEADER -->
-      <!-- MAIN PRESENTACION -->
-      <div class="hero">
-        <div class="slider">
-          <div class="slide current">
-            <div class="content">
-              <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima, et.</h3>
-              <p>
-                En coordinacion y apoyo del
-                <span class="resaltado">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit natus rem aliquam ratione! Laborum omnis similique excepturi cumque quae blanditiis!
-              </p>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="content">
-              <h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, nobis.
-              </h3>
-              <p>
-                Aproveche esta oportunidad por apertura,
-                <span class="resaltado"
-                  >ELIMINACION DE VIRUS, FORMATEOS de PCs y Laptos</span
-                >
-                a <span class="resaltado">Mitad de precio!!</span>.
-              </p>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="content">
-              <h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt!
-              </h3>
-              <p>
-                Se ofrece: Analisis de encuestas, pruebas
-                <span class="resaltado"
-                  >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, doloribus.</span
-                >Lorem ipsum dolor sit.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="buttons">
-          <button id="prev"><i class="fas fa-arrow-left"></i></button>
-          <button id="next"><i class="fas fa-arrow-right"></i></button>
+        </li>
+        <li class="activate">
+          <a href="#">
+            <i class="fa-regular fa-heart"></i>
+          </a>
+        </li>
+        <li class="activate">
+          <a href="#">
+            <i class="fa-regular fa-user"></i>
+          </a>
+        </li>
+        <li class="activate">
+          <a href="#">
+            <i class="fa-solid fa-bag-shopping"></i> s/.0.00
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+<!-- HEADER BUSCADOR -->
+  <!-- MAIN PRESENTACION -->
+  <div class="hero">
+    <div class="slider">
+      <div class="slide current">
+        <div class="content">
+          <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima, et.</h3>
+          <p>
+            En coordinacion y apoyo del
+            <span class="resaltado">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit natus rem aliquam ratione! Laborum omnis similique excepturi cumque quae blanditiis!
+          </p>
         </div>
       </div>
-      <!-- MAIN PRESENTACION -->
+      <div class="slide">
+        <div class="content">
+          <h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, nobis.
+          </h3>
+          <p>
+            Aproveche esta oportunidad por apertura,
+            <span class="resaltado"
+              >ELIMINACION DE VIRUS, FORMATEOS de PCs y Laptos</span
+            >
+            a <span class="resaltado">Mitad de precio!!</span>.
+          </p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="content">
+          <h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt!
+          </h3>
+          <p>
+            Se ofrece: Analisis de encuestas, pruebas
+            <span class="resaltado"
+              >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, doloribus.</span
+            >Lorem ipsum dolor sit.
+          </p>
+        </div>
+      </div>
+    </div>
 
-      <hr />
+    <div class="buttons">
+      <button id="prev"><i class="fas fa-arrow-left"></i></button>
+      <button id="next"><i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+  <!-- MAIN PRESENTACION END-->
+
+  <!-- INFO -->
+  <div class="grid-x large-up-5">
+    <div class="cell callout text-center info-1">
+      <i class="fa-solid fa-truck-fast"></i>
+      <p>ENVIOS GRATIS</p>
+        desde $50
+    </div>
+    <div class="cell callout text-center info-1">
+      <i class="fa-regular fa-thumbs-up"></i>
+      <p>99% Comentario</p>
+      Positivos
+    </div>
+    <div class="cell callout text-center info-1">
+      <i class="fa-solid fa-rotate"></i>
+      <p>365 dias</p>
+      Devolucion Gatruita
+    </div>
+    <div class="cell callout text-center info-1">
+      <i class="fa-solid fa-credit-card"></i>
+      <p>Sistema de Pagos</p>
+      Seguro
+    </div>
+    <div class="cell callout text-center info-1">
+      <i class="fa-solid fa-tags"></i>
+      <p>Las Mejores</p>
+      Marcas
+    </div>
+  </div>
+  <!-- INFO END-->
+  <!-- IMAGENES STATICAS -->
+  <div class="grid-x large-up-2">
+    <div class="cell">
+      <img src="{{ url_for('static', filename='img/img-1.jpg') }}" alt="" width="90%">
+    </div>
+    <div class="cell">
+      <img src="{{ url_for('static', filename='img/img-2.png') }}" alt="">
+    </div>
+  </div>
+  <!-- IMAGENES STATICAS END-->
+
+</div>
+<!-- CONTENIDO PRINCIPAL END-->
+<hr />
 
     <!-- Pie de pagina -->
 <div class="grid-x">
@@ -291,8 +340,9 @@
     </div>
   </div>
 </div>
+<!-- Pie de pagina END-->
 
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat1.js') }}"></script>
     <script src="{{ url_for('static', filename='js/foundation.js') }}"></script>
 
     <script>

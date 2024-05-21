@@ -7,7 +7,6 @@ const sendChatBtn = document.querySelector(".chat-input span");
 let userMessage = null; // Variable to store user's message
 const API_KEY = ""; // Paste your API key here
 const inputInitHeight = chatInput.scrollHeight;
-
 const createChatLi = (message, className) => {
     // Create a chat <li> element with passed message and className
     const chatLi = document.createElement("li");
@@ -17,11 +16,9 @@ const createChatLi = (message, className) => {
     chatLi.querySelector("p").textContent = message;
     return chatLi; // return chat <li> element
 }
-
 const generateResponse = (chatElement, userMessage) => {
-    const API_URL = "/procesarJson";
+    const API_URL = "/chatbot";
     const messageElement = chatElement.querySelector("p");
-
     // Define the properties and message for the API request
     const requestOptions = {
         method: "POST",
@@ -33,8 +30,14 @@ const generateResponse = (chatElement, userMessage) => {
     //console.log("se enviara los datos...... ", requestOptions);
     // Send POST request to API, get response and set the response as paragraph text
     fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
-        //console.log("Respuesta del servidor:", data.resultado);
-        messageElement.textContent = data.resultado;        
+        let result = data.resultado;
+        console.log("Respuesta del servidor:", data.resultado);
+        let html = "";
+        result.forEach(element => {
+            html +=`${element[0]}->${element[1]}`;
+        });
+        console.log(html)
+        messageElement.textContent = html;
     }).catch(() => {
         messageElement.classList.add("error");
         messageElement.textContent = "Oops! Something went wrong. Please try again.";
@@ -49,7 +52,7 @@ const handleChat = () => {
     chatInput.value = "";
     chatInput.style.height = `${inputInitHeight}px`;
 
-    // Append the user's message to the chatbox
+    // Append the user's message to the chatboxf
     chatbox.appendChild(createChatLi(userMessage, "outgoing"));
     chatbox.scrollTo(0, chatbox.scrollHeight);
     
@@ -61,13 +64,11 @@ const handleChat = () => {
         generateResponse(incomingChatLi, userMessage);
     }, 600);
 }
-
 chatInput.addEventListener("input", () => {
     // Adjust the height of the input textarea based on its content
     chatInput.style.height = `${inputInitHeight}px`;
     chatInput.style.height = `${chatInput.scrollHeight}px`;
 });
-
 chatInput.addEventListener("keydown", (e) => {
     // If Enter key is pressed without Shift key and the window 
     // width is greater than 800px, handle the chat
@@ -76,7 +77,6 @@ chatInput.addEventListener("keydown", (e) => {
         handleChat();
     }
 });
-
 sendChatBtn.addEventListener("click", handleChat);
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
